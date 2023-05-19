@@ -1,25 +1,61 @@
 package application;
 
+import java.sql.SQLException;
+import java.util.List;
+
 import bookDTO.BookDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
-import java.sql.SQLException;
-import java.util.List;
 
 public class ShowBookasTableController {
     @FXML
-    public Button closeButton;
+    private Button closeButton;
+    
+    @FXML
+    private TableView<BookDto> bookTable;
+    
+    @FXML
+    private TableColumn<BookDto, String> noCol;
+    
+    @FXML
+    private TableColumn<BookDto, String> isbnCol;
+    
+    @FXML
+    private TableColumn<BookDto, String> titleCol;
+    
+    @FXML
+    private TableColumn<BookDto, String> authorCol;
+    
+    @FXML
+    private TableColumn<BookDto, String> publishedDateCol;
+    
+    @FXML
+    private TableColumn<BookDto, String> timestampCol;
+
+    @FXML
+    public void initialize() {
+        noCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("no"));
+        isbnCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("isbn"));
+        titleCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("title"));
+        authorCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("authors"));
+        publishedDateCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("publishedDate"));
+        timestampCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("timestamp"));
+    }
 
     public void showBookTable() throws SQLException {
         List<BookDto> books = LibraryManager.showBooksinListForm();
-        StringBuilder sb = new StringBuilder();
-
+        
+        for (int i = 0; i < books.size(); i++) {
+            books.get(i).setNo(i + 1);
+        }
+        
+        bookTable.getItems().setAll(books);
     }
-
-
 
     @FXML
     public void handleCloseButtonAction(ActionEvent event) {
