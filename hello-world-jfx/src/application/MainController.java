@@ -17,10 +17,6 @@ public class MainController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../fxmlfile_collection/ShowBookList.fxml"));
         Parent showBookParent = fxmlLoader.load();
         Scene showBookScene = new Scene(showBookParent);
-//        // Get the stage information
-//        Stage window = (Stage)((Node)AE.getSource()).getScene().getWindow();
-//        window.setScene(showBookScene);
-//        window.show();
 
         // Create new stage (window)
         Stage window = new Stage();
@@ -36,7 +32,14 @@ public class MainController {
     }
 
     public void searchFromGoogle(ActionEvent actionEvent) throws ClassNotFoundException, SQLException, IOException {
-        //  LibraryManager.getMultipleBooks();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../fxmlfile_collection/searchwithGoogle.fxml"));
+        Parent showBookParent = fxmlLoader.load();
+        Scene showBookScene = new Scene(showBookParent);
+
+        // Create new stage (window)
+        Stage window = new Stage();
+        window.setScene(showBookScene);
+        window.show();
     }
 
     public void exit(ActionEvent actionEvent) {

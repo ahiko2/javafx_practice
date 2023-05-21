@@ -12,7 +12,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(
-					getClass().getResource("../fxmlfile_collection/searchwithGoogle.fxml")
+					getClass().getResource("../fxmlfile_collection/MainScene.fxml")
 			);
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("JavaFX Sample.");
