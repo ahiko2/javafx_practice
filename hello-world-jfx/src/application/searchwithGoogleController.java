@@ -67,6 +67,16 @@ public class searchwithGoogleController {
         authorCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("authors"));
         publishedDateCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("publishedDate"));
         Description.setCellValueFactory(new PropertyValueFactory<BookDto, String>("description"));
+
+
+        noCol.prefWidthProperty().bind(bookTable.widthProperty().multiply(0.1));
+        isbnCol.prefWidthProperty().bind(bookTable.widthProperty().multiply(0.15));
+        titleCol.prefWidthProperty().bind(bookTable.widthProperty().multiply(0.2));
+        authorCol.prefWidthProperty().bind(bookTable.widthProperty().multiply(0.2));
+        publishedDateCol.prefWidthProperty().bind(bookTable.widthProperty().multiply(0.2));
+        Description.prefWidthProperty().bind(bookTable.widthProperty().multiply(0.15));
+
+
     }
     public void showBookTable(List<BookDto> books) throws SQLException {
         for (int i = 0; i < books.size(); i++) {
