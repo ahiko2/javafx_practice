@@ -3,6 +3,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import bookDTO.BookDto;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -77,6 +78,10 @@ public class searchwithGoogleController {
         Description.prefWidthProperty().bind(bookTable.widthProperty().multiply(0.15));
 
 
+        Platform.runLater(() -> queryField.requestFocus());
+
+        // Set the placeholder text
+        queryField.setPromptText("Enter book name");
     }
     public void showBookTable(List<BookDto> books) throws SQLException {
         for (int i = 0; i < books.size(); i++) {
