@@ -10,6 +10,14 @@ public class BookDto {
     private String publishedDate;
     private String description;
     private Timestamp timestamp;
+    private Integer no;
+    public Integer getNo() {
+        return this.no;
+    }
+
+    public void setNo(Integer no) {
+        this.no = no;
+    }
 
     public String getIsbn() {
         return isbn;
@@ -43,19 +51,19 @@ public class BookDto {
         this.publishedDate = publishedDate;
     }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public Timestamp getTimestamp() {
-		return timestamp;
-	}
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
 
-	public void setTimestamp(Timestamp timestamp) {
-		this.timestamp = timestamp;
-	}
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
+    }
 }

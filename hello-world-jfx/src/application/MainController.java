@@ -13,7 +13,7 @@ public class MainController {
     private LibraryManager libraryManager = new LibraryManager();
 
     public void showBook(ActionEvent AE) throws ClassNotFoundException, SQLException, IOException {
-       // LibraryManager.SearchBook();
+        // LibraryManager.SearchBook();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../fxmlfile_collection/ShowBookList.fxml"));
         Parent showBookParent = fxmlLoader.load();
         Scene showBookScene = new Scene(showBookParent);
@@ -36,7 +36,7 @@ public class MainController {
     }
 
     public void searchFromGoogle(ActionEvent actionEvent) throws ClassNotFoundException, SQLException, IOException {
-        LibraryManager.getMultipleBooks();
+        //  LibraryManager.getMultipleBooks();
     }
 
     public void exit(ActionEvent actionEvent) {

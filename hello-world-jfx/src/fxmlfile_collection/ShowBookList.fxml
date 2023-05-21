@@ -11,7 +11,7 @@
     <Button fx:id="closeButton" layoutX="443.0" layoutY="334.0" onAction="#handleCloseButtonAction" text="Exit" />
 
     <Button layoutY="334.0" onAction="#showBookList" text="Show Book List" />
-  
+
 
 
 </AnchorPane>
