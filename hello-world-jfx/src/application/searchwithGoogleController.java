@@ -78,7 +78,7 @@ public class searchwithGoogleController {
         Description.prefWidthProperty().bind(bookTable.widthProperty().multiply(0.15));
 
 
-        Platform.runLater(() -> queryField.requestFocus());
+       // Platform.runLater(() -> queryField.requestFocus());
 
         // Set the placeholder text
         queryField.setPromptText("Enter book name");

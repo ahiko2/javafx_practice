@@ -5,7 +5,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.layout.VBox?>
 <AnchorPane minHeight="410.0" minWidth="271.0" prefHeight="410.0" prefWidth="271.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+
     <Text layoutX="43.0" layoutY="39.0" text="Welcome to DemoTest Application" />
     <Label layoutX="51.0" layoutY="69.0" text="Choose what you want to do" />
 
@@ -14,4 +16,5 @@
     <Button layoutX="61.0" layoutY="228.0" minWidth="150.0" onAction="#deleteBook" text="Delete Book" />
     <Button layoutX="61.0" layoutY="106.0" minWidth="150.0" onAction="#searchFromGoogle" text="Search from Google" />
     <Button layoutX="176.0" layoutY="357.0" onAction="#exit" text="Exit" />
+
 </AnchorPane>

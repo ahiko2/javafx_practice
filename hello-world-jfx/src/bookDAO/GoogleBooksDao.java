@@ -76,14 +76,14 @@ public class GoogleBooksDao {
             }
 
             if (volumeInfoObject.has("publishedDate")) {
-                publishedDate = volumeInfoObject.get("publishedDate").getAsString(); 
-                
+                publishedDate = volumeInfoObject.get("publishedDate").getAsString();
 
-                if (publishedDate.length() == 7) {
-                    publishedDate += "-01"; 
-                    // some books doesnt have day, and database only accept y/m/d so, if it didnt has date, +01
+                // Check for incomplete date and add missing parts
+                if (publishedDate.length() == 4) {  // If the date string contains only year
+                    publishedDate += "-01-01"; // append month and day
+                } else if (publishedDate.length() == 7) { // If the date string contains year and month
+                    publishedDate += "-01"; // append day
                 }
-
             }
             if (volumeInfoObject.has("description")) {
                 description = volumeInfoObject.get("description").getAsString(); // Retrieve the description

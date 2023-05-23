@@ -23,7 +23,7 @@ public class LibraryManager {
         while (true) {
             try {
                 new LibraryManager();
-                LibraryManager.start();start();
+                LibraryManager.start();
             } catch (Exception e) {
                 System.out.println("どこかでエラー");
                 e.printStackTrace();

@@ -38,13 +38,16 @@ public class ShowBookasTableController {
     private TableColumn<BookDto, String> timestampCol;
 
     @FXML
-    public void initialize() {
+    public void initialize() throws SQLException {
         noCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("no"));
         isbnCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("isbn"));
         titleCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("title"));
         authorCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("authors"));
         publishedDateCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("publishedDate"));
         timestampCol.setCellValueFactory(new PropertyValueFactory<BookDto, String>("timestamp"));
+
+        showBookTable();
+
     }
 
     public void showBookTable() throws SQLException {
